@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio_website/Layout/custom_tab_bar.dart';
-import 'package:portfolio_website/Views/content_view.dart';
+import 'package:portfolio_website/Layout/widgets/content_view.dart';
 
 class DesktopView extends StatelessWidget {
   const DesktopView({

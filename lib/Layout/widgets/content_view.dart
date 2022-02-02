@@ -1,5 +1,5 @@
 import 'package:flutter/cupertino.dart';
-import 'package:portfolio_website/Views/custom_tab.dart';
+import 'package:portfolio_website/Layout/widgets/custom_tab.dart';
 
 class ContentView {
   final CustomTab tab;

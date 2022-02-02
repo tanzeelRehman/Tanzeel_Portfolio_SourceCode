@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio_website/Layout/custom_tab_bar.dart';
+
 import 'package:portfolio_website/Layout/desktop_view.dart';
 import 'package:portfolio_website/Layout/mobile_view.dart';
-import 'package:portfolio_website/Views/content_view.dart';
-import 'package:portfolio_website/Views/custom_tab.dart';
+
+import 'package:portfolio_website/Layout/widgets/tab_contents.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 
 class Layout extends StatefulWidget {
@@ -23,36 +23,6 @@ class _LayoutState extends State<Layout> with SingleTickerProviderStateMixin {
     super.initState();
     tabController = TabController(length: contentviews.length, vsync: this);
   }
-
-  List<ContentView> contentviews = [
-    ContentView(
-        tab: const CustomTab(text: "Home"),
-        content: Center(
-          child: Container(
-            width: 100,
-            height: 100,
-            color: Colors.green,
-          ),
-        )),
-    ContentView(
-        tab: const CustomTab(text: "About"),
-        content: Center(
-          child: Container(
-            width: 100,
-            height: 100,
-            color: Colors.red,
-          ),
-        )),
-    ContentView(
-        tab: const CustomTab(text: "Projects"),
-        content: Center(
-          child: Container(
-            width: 100,
-            height: 100,
-            color: Colors.blue,
-          ),
-        ))
-  ];
 
   @override
   Widget build(BuildContext context) {
