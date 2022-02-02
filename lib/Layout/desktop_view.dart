@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio_website/Layout/custom_tab_bar.dart';
+import 'package:portfolio_website/Layout/bottom_bar.dart';
+import 'package:portfolio_website/Layout/nav_bar.dart';
 import 'package:portfolio_website/Layout/widgets/content_view.dart';
 
 class DesktopView extends StatelessWidget {
@@ -26,11 +27,13 @@ class DesktopView extends StatelessWidget {
             tabs: contentviews.map((e) => e.tab).toList()),
         //? Here Goes the content of every Tab when it will change, will cover 85% of the screen (scrrenheight * 0.85) = 85%
         Container(
-          height: screenheight * 0.85,
+          height: screenheight * 0.80,
           child: TabBarView(
               controller: tabController,
               children: contentviews.map((e) => e.content).toList()),
-        )
+        ),
+
+        BottomBar()
       ],
     );
   }

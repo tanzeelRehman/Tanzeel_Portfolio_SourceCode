@@ -29,7 +29,7 @@ class _LayoutState extends State<Layout> with SingleTickerProviderStateMixin {
     screenheight = MediaQuery.of(context).size.height;
     screenwidth = MediaQuery.of(context).size.width;
     //? Padding of top tabbar
-    toppadding = screenheight * 0.04;
+    toppadding = screenheight * 0.02;
     bottompadding = screenheight * 0.01;
     return Scaffold(
       endDrawer: drawer(contentviews, screenheight),
