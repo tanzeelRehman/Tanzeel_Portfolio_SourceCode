@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio_website/constants/colors.dart';
+import 'package:portfolio_website/outline_button.dart';
 
 class CustomTabBar extends StatelessWidget {
   final TabController tabController;
@@ -19,26 +20,35 @@ class CustomTabBar extends StatelessWidget {
         : screenwidth > 1100
             ? 0.3
             : 0.4;
-    return Padding(
-      //? Add padding at right side of tabbar
-      padding: EdgeInsets.only(right: screenwidth * 0.05),
-      child: Container(
-        //? width of Tab items
-        width: screenwidth * tabbarscalling,
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: [
+        OutlinedCustomBtn(
+          btnText: "Resume",
+          onPressed: () {},
+        ),
+        Padding(
+          //? Add padding at right side of tabbar
+          padding: EdgeInsets.only(right: screenwidth * 0.05),
+          child: Container(
+            //? width of Tab items
+            width: screenwidth * tabbarscalling,
 
-        child: Theme(
-          //* Customize the intrection style of tab items the way you want
-          data: ThemeData(
-              highlightColor: Colors.transparent,
-              splashColor: Colors.transparent,
-              hoverColor: Colors.transparent),
-          child: TabBar(
-            indicatorColor: klightRed,
-            tabs: tabs,
-            controller: tabController,
+            child: Theme(
+              //* Customize the intrection style of tab items the way you want
+              data: ThemeData(
+                  highlightColor: Colors.transparent,
+                  splashColor: Colors.transparent,
+                  hoverColor: Colors.transparent),
+              child: TabBar(
+                indicatorColor: kblue,
+                tabs: tabs,
+                controller: tabController,
+              ),
+            ),
           ),
         ),
-      ),
+      ],
     );
   }
 }

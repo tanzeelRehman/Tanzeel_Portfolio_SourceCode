@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:portfolio_website/Layout/desktop_view.dart';
 import 'package:portfolio_website/Layout/mobile_view.dart';
 
-import 'package:portfolio_website/Layout/widgets/tab_contents.dart';
+import 'package:portfolio_website/tab_contents.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 
 class Layout extends StatefulWidget {
@@ -39,9 +39,7 @@ class _LayoutState extends State<Layout> with SingleTickerProviderStateMixin {
         padding: EdgeInsets.only(top: toppadding, bottom: bottompadding),
         child: ResponsiveWrapper.of(context).isLargerThan(TABLET)
             ? DesktopView(
-                tabController: tabController,
-                contentviews: contentviews,
-                screenheight: screenheight)
+                tabController: tabController, screenheight: screenheight)
             : MobileView(
                 screenwidth: screenwidth,
                 scaffoldkey: scaffoldKey,
