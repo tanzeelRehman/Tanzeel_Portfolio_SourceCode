@@ -6,7 +6,16 @@ import 'package:portfolio_website/Views/Home/home_view.dart';
 import 'package:portfolio_website/Views/Projects/project_view.dart';
 
 List<ContentView> contentviews = [
-  ContentView(tab: const CustomTab(text: "Home"), content: HomeView()),
-  ContentView(tab: const CustomTab(text: "About"), content: AboutView()),
-  ContentView(tab: const CustomTab(text: "Projects"), content: ProjectView())
+  ContentView(
+      tab: const CustomTab(text: "Home"),
+      content: HomeView(),
+      icon: Icons.home),
+  ContentView(
+      tab: const CustomTab(text: "About"),
+      content: AboutView(),
+      icon: Icons.person),
+  ContentView(
+      tab: const CustomTab(text: "Projects"),
+      content: ProjectView(),
+      icon: Icons.safety_divider)
 ];

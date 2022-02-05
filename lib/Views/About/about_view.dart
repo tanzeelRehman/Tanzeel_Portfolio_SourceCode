@@ -5,6 +5,9 @@ class AboutView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Container(
+      height: 1000,
+      color: Colors.red,
+    );
   }
 }

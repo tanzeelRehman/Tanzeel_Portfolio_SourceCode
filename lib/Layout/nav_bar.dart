@@ -13,6 +13,7 @@ class CustomTabBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     double screenwidth = MediaQuery.of(context).size.width;
+    double screenheight = MediaQuery.of(context).size.height;
     //? Changes the width of tab items when screen get smaller to avoid line spacing
     //! We use this when we keep tab items at right side
     double tabbarscalling = screenwidth > 1400
@@ -23,10 +24,17 @@ class CustomTabBar extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        OutlinedCustomBtn(
-          btnText: "Resume",
-          onPressed: () {},
+        Padding(
+          padding: EdgeInsets.only(left: screenwidth * 0.01, top: 4),
+          child: Image(
+              height: screenheight * 0.07,
+              fit: BoxFit.fitHeight,
+              image: const AssetImage('lib/assets/images/tanzeel_dark.png')),
         ),
+        // OutlinedCustomBtn(
+        //   btnText: "Resume",
+        //   onPressed: () {},
+        // ),
         Padding(
           //? Add padding at right side of tabbar
           padding: EdgeInsets.only(right: screenwidth * 0.05),
