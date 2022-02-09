@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio_website/constants/colors.dart';
-import 'package:portfolio_website/outline_button.dart';
+import 'package:portfolio_website/Widgets/outline_button.dart';
 
 class CustomTabBar extends StatelessWidget {
   final TabController tabController;
@@ -29,12 +29,8 @@ class CustomTabBar extends StatelessWidget {
           child: Image(
               height: screenheight * 0.07,
               fit: BoxFit.fitHeight,
-              image: const AssetImage('lib/assets/images/tanzeel_dark.png')),
+              image: const AssetImage('lib/assets/images/tanzeel3_dark.png')),
         ),
-        // OutlinedCustomBtn(
-        //   btnText: "Resume",
-        //   onPressed: () {},
-        // ),
         Padding(
           //? Add padding at right side of tabbar
           padding: EdgeInsets.only(right: screenwidth * 0.05),
@@ -55,6 +51,10 @@ class CustomTabBar extends StatelessWidget {
               ),
             ),
           ),
+        ),
+        OutlinedCustomBtn(
+          btnText: "Resume",
+          onPressed: () {},
         ),
       ],
     );

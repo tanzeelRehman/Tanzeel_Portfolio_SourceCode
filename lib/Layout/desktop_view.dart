@@ -17,26 +17,29 @@ class DesktopView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.start,
-      crossAxisAlignment: CrossAxisAlignment.end,
-      children: [
-        //? This is Tabbar with no of tabs, which will start from right side
+    return SingleChildScrollView(
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.end,
+        children: [
+          //? This is Tabbar with no of tabs, which will start from right side
 
-        CustomTabBar(
-            tabController: tabController,
-            tabs: contentviews.map((e) => e.tab).toList()),
+          CustomTabBar(
+              tabController: tabController,
+              tabs: contentviews.map((e) => e.tab).toList()),
 
-        //? Here Goes the content of every Tab when it will change, will cover 85% of the screen (scrrenheight * 0.85) = 85%
-        Container(
-          height: screenheight * 0.75,
-          child: TabBarView(
-              controller: tabController,
-              children: contentviews.map((e) => e.content).toList()),
-        ),
+          //? Here Goes the content of every Tab when it will change, will cover 85% of the screen (scrrenheight * 0.85) = 85%
+          Container(
+            height: screenheight * 0.8,
+            child: TabBarView(
+                physics: const AlwaysScrollableScrollPhysics(),
+                controller: tabController,
+                children: contentviews.map((e) => e.content).toList()),
+          ),
 
-        BottomBar()
-      ],
+          BottomBar()
+        ],
+      ),
     );
   }
 }

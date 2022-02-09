@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
 
-Widget picture(double widthAndHeight) {
+Widget picture(double widthAndHeight, String imagePath) {
   return SizedBox(
     width: widthAndHeight,
     height: widthAndHeight,
     child: ClipRRect(
       borderRadius: BorderRadius.circular(widthAndHeight),
-      child:
-          Image.asset('lib/assets/images/cut_pic.jpg', fit: BoxFit.fitHeight),
+      child: Image.asset(imagePath, fit: BoxFit.fitHeight),
     ),
   );
 }

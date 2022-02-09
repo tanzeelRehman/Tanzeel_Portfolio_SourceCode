@@ -3,7 +3,7 @@ import 'package:portfolio_website/Services/handle_sizes.dart';
 import 'package:portfolio_website/Views/Home/widgets/animatedTextWidget.dart';
 import 'package:portfolio_website/Views/Home/widgets/header_and_subHeader.dart';
 import 'package:portfolio_website/Views/Home/widgets/pictureWidget.dart';
-import 'package:portfolio_website/outline_button.dart';
+import 'package:portfolio_website/Widgets/outline_button.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 
 class HomeView extends StatefulWidget {
@@ -58,7 +58,7 @@ class _HomeViewState extends State<HomeView> {
           ),
         ),
         SizedBox(width: screenwidth * 0.03),
-        picture(sizes.getImageSize())
+        picture(sizes.getImageSize(), 'lib/assets/images/cut_pic.jpg')
       ],
     );
   }
@@ -70,7 +70,7 @@ class _HomeViewState extends State<HomeView> {
       crossAxisAlignment: CrossAxisAlignment.center,
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        picture(sizes.getImageSize()),
+        picture(sizes.getImageSize(), 'lib/assets/images/cut_pic.jpg'),
         SizedBox(height: screenheight * 0.07),
         subHeader("WELCOME TO MY PORTFOLIO!", screenwidth * 0.05),
         SizedBox(height: screenheight * 0.02),
@@ -88,7 +88,7 @@ class _HomeViewState extends State<HomeView> {
         animatedText("UI/UX Designer", "Graphic Designer", "Flutter Developer",
             screenwidth * 0.06, screenheight, context),
         SizedBox(
-          height: screenheight * 0.03,
+          height: screenheight * 0.04,
         ),
         OutlinedCustomBtn(btnText: "Resume", onPressed: () {})
       ],

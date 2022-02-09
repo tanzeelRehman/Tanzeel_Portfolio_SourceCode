@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio_website/Layout/bottom_bar.dart';
 import 'package:portfolio_website/Layout/widgets/content_view.dart';
-import 'package:portfolio_website/bottom_bar_icons.dart';
+import 'package:portfolio_website/Widgets/bottom_bar_icons.dart';
 import 'package:portfolio_website/constants/colors.dart';
 import 'package:portfolio_website/tab_contents.dart';
 import 'package:scrollable_positioned_list/scrollable_positioned_list.dart';

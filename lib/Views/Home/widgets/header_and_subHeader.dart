@@ -17,6 +17,15 @@ Widget header(double fontSize) {
   );
 }
 
+Widget h1(double fontSize, String text, Color color) {
+  return Wrap(
+    children: [
+      Text(text,
+          style: GoogleFonts.playfairDisplay(color: color, fontSize: fontSize)),
+    ],
+  );
+}
+
 Widget subHeader(String text, double fontSize) {
   return Text(text,
       style:
