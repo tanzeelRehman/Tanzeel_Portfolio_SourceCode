@@ -1,9 +1,12 @@
+import 'package:carousel_slider/carousel_controller.dart';
 import 'package:flutter/material.dart';
 
 class Arrows extends StatelessWidget {
   final bool isBackArrow;
+  final CarouselController controller;
 
-  const Arrows({Key? key, required this.isBackArrow}) : super(key: key);
+  const Arrows({Key? key, required this.isBackArrow, required this.controller})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -12,7 +15,8 @@ class Arrows extends StatelessWidget {
       child: IconButton(
           splashColor: Colors.transparent,
           color: Colors.white,
-          onPressed: () {},
+          onPressed: () =>
+              isBackArrow ? controller.previousPage() : controller.nextPage(),
           icon: Icon(
               isBackArrow ? Icons.arrow_back_ios : Icons.arrow_forward_ios)),
     );

@@ -7,7 +7,7 @@ import 'package:portfolio_website/Widgets/community_icon_button.dart';
 import 'package:portfolio_website/Widgets/outline_button.dart';
 import 'package:portfolio_website/constants/colors.dart';
 import 'package:portfolio_website/constants/headings.dart';
-import 'package:portfolio_website/constants/links.dart';
+import 'package:portfolio_website/constants/strings.dart';
 
 Widget aboutdesktopView(
     double screenwidth, double screenheight, List communityIconHeight) {
