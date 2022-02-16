@@ -2,17 +2,24 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:portfolio_website/constants/colors.dart';
 
-Widget header(double fontSize) {
+Widget header(double fontSize, BuildContext context) {
   return Wrap(
     children: [
       Text("Hi, my name is ",
-          style: GoogleFonts.playfairDisplay(
-              color: Colors.white, fontSize: fontSize)),
+          style: Theme.of(context)
+              .textTheme
+              .headline1!
+              .copyWith(fontSize: fontSize)),
       Text("Tanzeel",
-          style: GoogleFonts.playfairDisplay(color: kblue, fontSize: fontSize)),
+          style: Theme.of(context)
+              .textTheme
+              .headline1!
+              .copyWith(fontSize: fontSize, color: kblue)),
       Text("!",
-          style: GoogleFonts.playfairDisplay(
-              color: Colors.white, fontSize: fontSize)),
+          style: Theme.of(context)
+              .textTheme
+              .headline1!
+              .copyWith(fontSize: fontSize)),
     ],
   );
 }
@@ -26,8 +33,8 @@ Widget h1(double fontSize, String text, Color color) {
   );
 }
 
-Widget subHeader(String text, double fontSize) {
+Widget subHeader1(String text, double fontSize, BuildContext context) {
   return Text(text,
       style:
-          GoogleFonts.montserrat(color: Colors.grey[300], fontSize: fontSize));
+          Theme.of(context).textTheme.subtitle1!.copyWith(fontSize: fontSize));
 }

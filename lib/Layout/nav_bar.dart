@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio_website/Theme/my_theme.dart';
 import 'package:portfolio_website/constants/colors.dart';
 import 'package:portfolio_website/Widgets/outline_button.dart';
 
@@ -40,10 +41,11 @@ class CustomTabBar extends StatelessWidget {
 
             child: Theme(
               //* Customize the intrection style of tab items the way you want
-              data: ThemeData(
+              data: MyTheme.darkTheme.copyWith(
                   highlightColor: Colors.transparent,
                   splashColor: Colors.transparent,
                   hoverColor: Colors.transparent),
+
               child: TabBar(
                 indicatorColor: kblue,
                 tabs: tabs,

@@ -19,7 +19,7 @@ Widget animatedText(String text1, String text2, String text3, double fontSize,
       SizedBox(width: screenwidth * 0.01),
       DefaultTextStyle(
         style:
-            GoogleFonts.montserrat(color: Colors.grey[300], fontSize: fontSize),
+            Theme.of(context).textTheme.subtitle1!.copyWith(fontSize: fontSize),
         child: AnimatedTextKit(
           isRepeatingAnimation: true,
           totalRepeatCount: 10,

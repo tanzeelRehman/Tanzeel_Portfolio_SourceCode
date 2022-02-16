@@ -12,10 +12,10 @@ Widget skill(String name) {
           FontAwesomeIcons.caretRight,
           color: kblue,
         ),
-        Padding(
-          padding: const EdgeInsets.only(left: 8),
-          child: subHeader(name, 15),
-        ),
+        // Padding(
+        //   padding: const EdgeInsets.only(left: 8),
+        //   child: subHeader1(name, 15),
+        // ),
       ],
     ),
   );

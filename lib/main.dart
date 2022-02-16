@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio_website/Layout/layout.dart';
+import 'package:portfolio_website/Theme/my_theme.dart';
 import 'package:portfolio_website/constants/colors.dart';
 import 'package:responsive_framework/responsive_wrapper.dart';
 import 'package:responsive_framework/utils/scroll_behavior.dart';
@@ -24,12 +25,7 @@ class MyApp extends StatelessWidget {
             ResponsiveBreakpoint.resize(800, name: DESKTOP),
             ResponsiveBreakpoint.resize(350, name: 'XL')
           ]),
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-        outlinedButtonTheme: OutlinedButtonThemeData(
-          style: OutlinedButton.styleFrom(primary: kblue),
-        ),
-      ),
+      theme: MyTheme.lightTheme,
       home: Layout(),
     );
   }

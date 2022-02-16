@@ -30,7 +30,7 @@ class BottomBarIcons extends StatelessWidget {
           icon: const FaIcon(FontAwesomeIcons.github),
           splashColor: Colors.transparent,
           iconSize: screenheight * 0.05,
-          color: Colors.white,
+          color: Theme.of(context).textTheme.subtitle1!.color,
           highlightColor: Colors.transparent,
         )
       ],

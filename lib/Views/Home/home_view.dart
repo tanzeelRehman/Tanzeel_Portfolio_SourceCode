@@ -44,8 +44,9 @@ class _HomeViewState extends State<HomeView> {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              subHeader("WELCOME TO MY PORTFOLIO!", screenheight * 0.03),
-              header(sizes.getFontSize(true)),
+              subHeader1(
+                  "WELCOME TO MY PORTFOLIO!", screenheight * 0.03, context),
+              header(sizes.getFontSize(true), context),
               SizedBox(height: screenheight * 0.05),
               animatedText(
                   "UI/UX Designer",
@@ -72,18 +73,18 @@ class _HomeViewState extends State<HomeView> {
       children: [
         picture(sizes.getImageSize(), 'lib/assets/images/cut_pic.jpg'),
         SizedBox(height: screenheight * 0.07),
-        subHeader("WELCOME TO MY PORTFOLIO!", screenwidth * 0.05),
+        subHeader1("WELCOME TO MY PORTFOLIO!", screenwidth * 0.05, context),
         SizedBox(height: screenheight * 0.02),
         Align(
           alignment: Alignment.center,
           child: Container(
             height: 2,
             width: screenwidth * 0.70,
-            color: Colors.white,
+            color: Theme.of(context).textTheme.subtitle1!.color,
           ),
         ),
         SizedBox(height: screenheight * 0.03),
-        header(screenwidth * 0.07),
+        header(screenwidth * 0.07, context),
         SizedBox(height: screenheight * 0.05),
         animatedText("UI/UX Designer", "Graphic Designer", "Flutter Developer",
             screenwidth * 0.06, screenheight, context),

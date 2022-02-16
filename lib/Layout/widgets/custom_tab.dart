@@ -10,7 +10,7 @@ class CustomTab extends StatelessWidget {
     return Tab(
       child: Text(
         text,
-        style: const TextStyle(fontSize: 17),
+        style: Theme.of(context).textTheme.subtitle1!.copyWith(fontSize: 17),
       ),
     );
   }

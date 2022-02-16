@@ -40,7 +40,6 @@ class _LayoutState extends State<Layout> with SingleTickerProviderStateMixin {
     return Scaffold(
       endDrawer: drawer(),
       key: scaffoldKey,
-      backgroundColor: kmainbg,
       body: Padding(
         padding: EdgeInsets.only(top: toppadding, bottom: bottompadding),
         child: ResponsiveWrapper.of(context).isLargerThan(TABLET)
@@ -61,7 +60,6 @@ class _LayoutState extends State<Layout> with SingleTickerProviderStateMixin {
     return SizedBox(
       width: screenwidth * 0.60,
       child: Drawer(
-          backgroundColor: kcomplimentry,
           child: ListView(
               children: [
                     SizedBox(
