@@ -16,7 +16,9 @@ class AboutView extends StatelessWidget {
     communityIconHeight = [60.0, 40.0];
 
     return ResponsiveWrapper.of(context).isLargerThan(TABLET)
-        ? aboutdesktopView(screenwidth, screenheight, communityIconHeight)
-        : aboutMobile(screenheight, screenwidth, communityIconHeight);
+        ? AboutDesktopView(
+            communityIconHeight: communityIconHeight,
+          )
+        : AboutMobile(communityIconHeight: communityIconHeight);
   }
 }

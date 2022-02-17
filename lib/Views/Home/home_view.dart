@@ -44,8 +44,8 @@ class _HomeViewState extends State<HomeView> {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              subHeader1(
-                  "WELCOME TO MY PORTFOLIO!", screenheight * 0.03, context),
+              subHeader1("WELCOME TO MY PORTFOLIO!", screenheight * 0.03,
+                  context, false),
               header(sizes.getFontSize(true), context),
               SizedBox(height: screenheight * 0.05),
               animatedText(
@@ -73,7 +73,8 @@ class _HomeViewState extends State<HomeView> {
       children: [
         picture(sizes.getImageSize(), 'lib/assets/images/cut_pic.jpg'),
         SizedBox(height: screenheight * 0.07),
-        subHeader1("WELCOME TO MY PORTFOLIO!", screenwidth * 0.05, context),
+        subHeader1(
+            "WELCOME TO MY PORTFOLIO!", screenwidth * 0.05, context, false),
         SizedBox(height: screenheight * 0.02),
         Align(
           alignment: Alignment.center,

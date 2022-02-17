@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio_website/Layout/bottom_bar.dart';
+import 'package:portfolio_website/Layout/mobile_bottom_bar.dart';
 import 'package:portfolio_website/Layout/widgets/content_view.dart';
 import 'package:portfolio_website/Widgets/bottom_bar_icons.dart';
 import 'package:portfolio_website/constants/colors.dart';
@@ -37,7 +38,7 @@ class MobileView extends StatelessWidget {
               onPressed: () => scaffoldkey.currentState!.openEndDrawer(),
               icon: const Icon(
                 Icons.menu_rounded,
-                color: Colors.white,
+                color: kblue,
               )),
 
           //? Here Goes the content of every Tab when it will change, will cover 85% of the screen (scrrenheight * 0.85) = 85%
@@ -47,6 +48,7 @@ class MobileView extends StatelessWidget {
                   itemScrollController: itemScrollController,
                   itemBuilder: (context, index) =>
                       contentviews[index].content)),
+          mobileBottomBar(context),
         ],
       ),
     );

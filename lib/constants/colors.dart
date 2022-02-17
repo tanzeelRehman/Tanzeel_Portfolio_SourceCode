@@ -9,3 +9,4 @@ const ktxtcolor1 = Color(0xff2a2a32);
 const ktxtcolor2 = Color(0xFF565662);
 
 const lightblue = Color(0xFF9CB5F9);
+const babyblue = Color(0xff89CFF0);

@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:portfolio_website/Services/theme_service.dart';
 import 'package:portfolio_website/Theme/my_theme.dart';
 import 'package:portfolio_website/constants/colors.dart';
 import 'package:portfolio_website/Widgets/outline_button.dart';
 
-class CustomTabBar extends StatelessWidget {
+class CustomTabBar extends StatefulWidget {
   final TabController tabController;
   final List<Widget> tabs;
 
@@ -12,7 +14,14 @@ class CustomTabBar extends StatelessWidget {
       : super(key: key);
 
   @override
+  State<CustomTabBar> createState() => _CustomTabBarState();
+}
+
+class _CustomTabBarState extends State<CustomTabBar> {
+  late bool currentMode;
+  @override
   Widget build(BuildContext context) {
+    currentMode = Get.isDarkMode;
     double screenwidth = MediaQuery.of(context).size.width;
     double screenheight = MediaQuery.of(context).size.height;
     //? Changes the width of tab items when screen get smaller to avoid line spacing
@@ -30,7 +39,9 @@ class CustomTabBar extends StatelessWidget {
           child: Image(
               height: screenheight * 0.07,
               fit: BoxFit.fitHeight,
-              image: const AssetImage('lib/assets/images/tanzeel3_dark.png')),
+              image: ThemeService().isSavedDarkMode()
+                  ? const AssetImage('lib/assets/images/tanzeel3_dark.png')
+                  : const AssetImage('lib/assets/images/tanzeel3_light.png')),
         ),
         Padding(
           //? Add padding at right side of tabbar
@@ -41,22 +52,42 @@ class CustomTabBar extends StatelessWidget {
 
             child: Theme(
               //* Customize the intrection style of tab items the way you want
-              data: MyTheme.darkTheme.copyWith(
-                  highlightColor: Colors.transparent,
-                  splashColor: Colors.transparent,
-                  hoverColor: Colors.transparent),
+              data: ThemeService().isSavedDarkMode()
+                  ? MyTheme.darkTheme.copyWith(
+                      highlightColor: Colors.transparent,
+                      splashColor: Colors.transparent,
+                      hoverColor: Colors.transparent)
+                  : MyTheme.lightTheme.copyWith(
+                      highlightColor: Colors.transparent,
+                      splashColor: Colors.transparent,
+                      hoverColor: Colors.transparent),
 
               child: TabBar(
                 indicatorColor: kblue,
-                tabs: tabs,
-                controller: tabController,
+                tabs: widget.tabs,
+                controller: widget.tabController,
               ),
             ),
           ),
         ),
-        OutlinedCustomBtn(
-          btnText: "Resume",
-          onPressed: () {},
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 15.0),
+          child: Row(
+            children: [
+              OutlinedCustomBtn(
+                btnText: "Resume",
+                onPressed: () {},
+              ),
+              const SizedBox(
+                width: 6,
+              ),
+              Switch(
+                  value: ThemeService().isSavedDarkMode(),
+                  onChanged: (value) {
+                    ThemeService().changeThemeMode();
+                  }),
+            ],
+          ),
         ),
       ],
     );

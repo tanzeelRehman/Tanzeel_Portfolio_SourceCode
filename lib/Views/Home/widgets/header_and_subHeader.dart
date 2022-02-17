@@ -24,7 +24,7 @@ Widget header(double fontSize, BuildContext context) {
   );
 }
 
-Widget h1(double fontSize, String text, Color color) {
+Widget header1(double fontSize, String text, Color color) {
   return Wrap(
     children: [
       Text(text,
@@ -33,8 +33,18 @@ Widget h1(double fontSize, String text, Color color) {
   );
 }
 
-Widget subHeader1(String text, double fontSize, BuildContext context) {
+Widget subHeader1(
+    String text, double fontSize, BuildContext context, bool isBoald) {
   return Text(text,
-      style:
-          Theme.of(context).textTheme.subtitle1!.copyWith(fontSize: fontSize));
+      style: Theme.of(context).textTheme.subtitle1!.copyWith(
+          fontSize: fontSize,
+          fontWeight: isBoald ? FontWeight.w600 : FontWeight.normal));
+}
+
+Widget subHeader2(
+    String text, double fontSize, BuildContext context, bool isBoald) {
+  return Text(text,
+      style: Theme.of(context).textTheme.subtitle2!.copyWith(
+          fontSize: fontSize,
+          fontWeight: isBoald ? FontWeight.w600 : FontWeight.normal));
 }

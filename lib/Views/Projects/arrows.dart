@@ -14,7 +14,6 @@ class Arrows extends StatelessWidget {
       alignment: isBackArrow ? Alignment.centerLeft : Alignment.centerRight,
       child: IconButton(
           splashColor: Colors.transparent,
-          color: Colors.white,
           onPressed: () =>
               isBackArrow ? controller.previousPage() : controller.nextPage(),
           icon: Icon(

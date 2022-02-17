@@ -4,12 +4,18 @@ import 'package:google_fonts/google_fonts.dart';
 
 import 'package:portfolio_website/Views/Home/widgets/header_and_subHeader.dart';
 import 'package:portfolio_website/Widgets/bottom_bar_icons.dart';
+import 'package:responsive_framework/responsive_framework.dart';
 
 class BottomBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     double screenheight = MediaQuery.of(context).size.height;
     double screenwidth = MediaQuery.of(context).size.width;
+    return desktopBottomBar(context, screenwidth, screenheight);
+  }
+
+  Widget desktopBottomBar(
+      BuildContext context, double screenwidth, double screenheight) {
     return Column(
       children: [
         Align(

@@ -4,6 +4,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:portfolio_website/Layout/desktop_view.dart';
 import 'package:portfolio_website/Layout/mobile_view.dart';
 import 'package:portfolio_website/Layout/widgets/content_view.dart';
+import 'package:portfolio_website/Services/theme_service.dart';
 import 'package:portfolio_website/constants/colors.dart';
 
 import 'package:portfolio_website/tab_contents.dart';
@@ -75,6 +76,11 @@ class _LayoutState extends State<Layout> with SingleTickerProviderStateMixin {
                     SizedBox(
                       height: screenheight * 0.08,
                     ),
+                    Switch(
+                        value: ThemeService().isSavedDarkMode(),
+                        onChanged: (value) {
+                          ThemeService().changeThemeMode();
+                        }),
                   ] +
                   contentviews
                       .map((e) => SizedBox(

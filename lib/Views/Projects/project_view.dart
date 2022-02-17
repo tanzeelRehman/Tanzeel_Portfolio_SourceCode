@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
-import 'package:portfolio_website/Layout/widgets/arrows.dart';
+import 'package:portfolio_website/Views/Projects/arrows.dart';
+import 'package:portfolio_website/Views/Home/widgets/header_and_subHeader.dart';
+import 'package:portfolio_website/Views/Projects/arrows.dart';
 import 'package:portfolio_website/constants/colors.dart';
 import 'package:portfolio_website/constants/strings.dart';
 import 'package:responsive_framework/responsive_framework.dart';
@@ -39,8 +41,8 @@ class _ProjectViewState extends State<ProjectView> {
           child: Container(
             child: Column(
               children: [
-                Text(projects[activeIndex].title),
-                Text(projects[activeIndex].desc)
+                header1(30, projects[activeIndex].title, kblue),
+                subHeader1(projects[activeIndex].desc, 15, context, false)
               ],
             ),
           ),
@@ -58,10 +60,11 @@ class _ProjectViewState extends State<ProjectView> {
         SizedBox(
           height: projectViewScreenHeight * 0.25,
           child: Container(
+            padding: const EdgeInsets.symmetric(vertical: 15),
             child: Column(
               children: [
-                Text(projects[activeIndex].title),
-                Text(projects[activeIndex].desc)
+                header1(30, projects[activeIndex].title, kblue),
+                subHeader2(projects[activeIndex].desc, 15, context, true)
               ],
             ),
           ),
@@ -80,26 +83,28 @@ class _ProjectViewState extends State<ProjectView> {
   //* ==========================================================
 
   Widget buildIndicator() {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        Arrows(
-          isBackArrow: true,
-          controller: controller,
-        ),
-        Padding(
-          padding:
-              const EdgeInsets.only(top: 40, bottom: 20, left: 20, right: 20),
-          child: AnimatedSmoothIndicator(
-              effect: const WormEffect(activeDotColor: kblue),
-              activeIndex: activeIndex,
-              count: projects.length),
-        ),
-        Arrows(
-          isBackArrow: false,
-          controller: controller,
-        ),
-      ],
+    return Padding(
+      padding: const EdgeInsets.only(top: 40, bottom: 20),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Arrows(
+            isBackArrow: true,
+            controller: controller,
+          ),
+          Padding(
+            padding: const EdgeInsets.only(left: 20, right: 20),
+            child: AnimatedSmoothIndicator(
+                effect: const WormEffect(activeDotColor: kblue),
+                activeIndex: activeIndex,
+                count: projects.length),
+          ),
+          Arrows(
+            isBackArrow: false,
+            controller: controller,
+          ),
+        ],
+      ),
     );
   }
 
