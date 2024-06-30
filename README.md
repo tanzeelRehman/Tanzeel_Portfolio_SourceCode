@@ -1,17 +1,21 @@
 
-
 # A Static Portfolio Website
+My old portfolio website project, which I decided to discard for some reason but for starters this website is a good way to start Flutter web
 
-## Task Which have to be Completed
+website link
+https://tanzeelrehman.github.io
 
-//TODO 1: Change starting theme from light theme to dark theme in main.dart
-//TODO 2: Add links in all buttons.
-//TODO 3: Add All projects and their description.
-//TODO 4: Add animated arrow {learn transform widget first} in home mobile view.
-//TODO 5: fix asthetics issues in mobile view {Run App on mobile emulator and see issues by yourself}
-//TODO 6: Add Contact form.
-//TODO 7: Add Services Page.
-//TODO 8: Add Experience.
-//TODO 9: Add Project Detail Screen.
-//TODO 10: Add Email and contact detail at side.
-//TODO 11: Add Chat Bot support if Possible.
+## Task Which has to be Completed
+- Change the starting theme from a light theme to a dark theme in the main. dart
+- Add links to all buttons.
+- Add All projects and their description.
+- Add animated arrow {learn transform widget first} in-home mobile view.
+- fix aesthetics issues in mobile view {Run App on the mobile emulator and see issues by yourself}
+- Add Contact form.
+- Add Services Page.
+- Add Experience.
+- Add Project Detail Screen.
+- Add Email and contact details at the side.
+- Add chatbot support.
+
+Copy This repo and modify it the way you want
